@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://darxius96205@bitbucket.org/darxius96205/proyectocloudlabs.git"
+    "url": "git+https://github.com/darxius96/proyectocloudlabs.git"
   },
   "keywords": [
     "express",
@@ -18,7 +18,7 @@
   ],
   "author": "Luis Fernando Martinez Carvajal",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/darxius96205/proyectocloudlabs#readme",
+  "homepage": "https://github.com/darxius96/proyectocloudlabs.git#readme",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
     "bcryptjs": "^2.4.3",
@@ -29,7 +29,6 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
-    "express-validator": "^6.9.2",
     "mongoose": "^5.11.12",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",

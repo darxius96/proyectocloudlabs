@@ -5,12 +5,7 @@ const userCtrl = new UserController();
 const { loggued } = require('../lib/auth');
 
 router.get('/', loggued, async (req, res) => {
-    var id;
-    if (req.user !== undefined) {
-        id = req.user.id;
-    } else {
-        id = null;
-    }
+    let id = req.user !== undefined ? req.user.id : null;
     const data = await userCtrl.getAllUsers(id);
     res.render('users/listUser', {users: data });
 });
@@ -23,7 +18,7 @@ router.route('/create-user/').post(async (req, res) => {
     const data = await userCtrl.createUser(req.body);
     var message, url;
     if (data === 0) {
-        message = 'Failed saved';
+        message = 'failed saved';
     } else if(data == 2) {
         message = 'the fields are required';
     } else if(data == 3) {

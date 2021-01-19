@@ -2,11 +2,9 @@ const express = require('express');
 const Handlebars = require('handlebars');
 const expresshandlebars = require('express-handlebars');
 const expsession = require('express-session');
-const expressvalidator = require('express-validator');
 const morgan = require('morgan');
 const cors = require('cors');
 const passport = require('passport');
-const passportlocal = require('passport-local');
 const path = require('path');
 const flash = require('connect-flash');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
@@ -34,7 +32,6 @@ app.engine('.hbs', expresshandlebars({
     layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: '.hbs',
-    helpers: require('./lib/handlebars'),
     handlebars: allowInsecurePrototypeAccess(Handlebars)
 }));
 app.set('view engine', '.hbs');

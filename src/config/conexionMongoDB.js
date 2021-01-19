@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGO_URL = process.env.URLMONGO ? process.env.URLMONGO : process.env.MONGOFAIL;
+const MONGO_URL = process.env.URLMONGO ? process.env.URLMONGO : 'mongodb+srv://cloudlabs:aeWV5d853NnNPK2B@cluster0.waobj.mongodb.net/db_cloudlabs?retryWrites=true&w=majority';
 mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,

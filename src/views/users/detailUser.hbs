@@ -2,6 +2,16 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
+                <div class="col-md-12 card-header mb-2">
+                    <div class="row">
+                        <div class="col-md-11">
+                            <h5>Welcome {{ user.firstname }} {{ user.surname }}</h5>
+                        </div>
+                        <div class="col-md-1">
+                            <a href="/logout" style="width: 100%;" class="btn btn-danger"><i class="fas fa-power-off"></i></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="card-header">
                     <h6>Detail User</h6>
                 </div>

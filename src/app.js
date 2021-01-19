@@ -18,7 +18,7 @@ const store = new MongoDBStore({
 });
 require('../src/lib/passport');
 
-// Verificar errores
+// verificar errores
 store.on('error', function(error) {
     console.log(error);
 });
@@ -26,7 +26,6 @@ store.on('error', function(error) {
 //configuraciones
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname,'views'));
-app.set('public', path.join(__dirname, 'public'));
 app.engine('.hbs', expresshandlebars({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
@@ -55,7 +54,6 @@ app.use(passport.session());
 app.use((req, res, next) => {
     app.locals.notifications = req.flash('notifications');
     app.locals.user = req.user;
-    //res.end();
     next();
 });
 
@@ -63,8 +61,5 @@ app.use((req, res, next) => {
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/users/', require('./routes/users'));
-
-//publicos
-app.use(express.static(app.get('public')));
 
 module.exports = app;

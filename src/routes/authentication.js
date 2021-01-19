@@ -1,8 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 const passport = require('passport');
+const { notLoggued } = require('../lib/auth');
 
-router.route('/signin').get((req, res) => {
+router.get('/signin/', notLoggued, (req, res) => {
     res.render('auth/signin');
 });
 

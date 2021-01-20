@@ -26,14 +26,14 @@ router.route('/create-user/').post(async (req, res) => {
     } else if(data == 4) {
         message = 'email already exists';
     } else {
-        res.render('users/listUser');
+        message = 'user created';
     }
     if (data == 0 || data >= 2) {
-        req.flash('notifications', message);
         url = '/users/new-user/';
     } else {
         url = '/users/';
     }
+    req.flash('notifications', message);
     res.redirect(url);
 });
 

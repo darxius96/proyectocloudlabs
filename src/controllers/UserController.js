@@ -44,7 +44,7 @@ class UserController {
     getAllUsers = async (id) => {
         try {
             let result;
-            result = id !== null ? await UserModel.find({ id: { $ne: id } }) : [];
+            result = id !== null ? await UserModel.find({ $and: [ { id: { $ne: id } },{ id: { $ne: 1 } } ]}) : [];
             return result;
         } catch (error) {
             console.log(error);
